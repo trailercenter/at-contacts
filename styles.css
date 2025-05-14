@@ -16,26 +16,33 @@ h1 {
   top: 3rem;
   left: 0;
   right: 0;
-  height: 60vh;               /* limit by height, not width */
-  background: url('assets/map.png') no-repeat center;
-  background-size: auto 100%; /* scale so height is always 100% */
+
+  /* 1. Full‐width, height determined by aspect‐ratio */
+  width: 100%;
+  aspect-ratio: 16 / 8;      /* ← adjust to your map’s width:height ratio */
+
+  /* 2. Show the entire image, centered */
+  background: url('assets/map.png') no-repeat center center;
+  background-size: contain;   /* ← “contain” never crops */
   z-index: 1;
 }
+
+
 
 /* BUTTONS ON RIGHT SIDE */
 .buttons {
   position: absolute;
   top: 50%;
-  right: 2%;
+  right: 15%;
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  z-index: 10;
+  z-index: 20;
 }
 .buttons button {
   padding: 1rem 2rem;
-  font-size: 1.2rem;
+  font-size: 2rem;
   color: #fff;
   border: none;
   border-radius: 6px;
@@ -46,6 +53,20 @@ h1 {
 .buttons button:active {
   transform: scale(.97);
 }
+
+/* Section labels above button groups */
+.buttons .section-label {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 1rem 0 0.5rem;
+  color: #333;
+}
+
+/* Vertical space between Dealers and Retail groups */
+.buttons .section-spacer {
+  height: 1rem;
+}
+
 /* per-group colors */
 .buttons button[data-group="FL"] {
   background-color: #e74c3c; /* red */
@@ -72,7 +93,7 @@ h1 {
   position: fixed;
   top: 50%;
   left: 100%;                /* start off-screen right */
-  width: 360px;
+  width: 560px;
   max-width: 90%;
   background: #fff;
   box-shadow: 0 8px 24px rgba(0,0,0,0.2);
@@ -100,18 +121,27 @@ h1 {
 }
 
 /* CONTACT CARD CONTENT */
+/* make the headshot larger, perfectly circular, and centered */
 #panel-content .headshot {
-  width: 120px;
-  height: 120px;
-  border-radius: 8px;
-  object-fit: cover;
-  margin-bottom: 1rem;
+  width: 300px;               /* increase to taste */
+  height: 300px;              /* match width for a perfect circle */
+  border-radius: 50%;         /* makes it circular */
+  object-fit: cover;          /* keep aspect ratio, crop overflow */
+  display: block;             /* so margin auto centers it */
+  margin: 0 auto 1rem;        /* center horizontally, 1rem bottom space */
 }
+
+/* Contact card — Name */
 #panel-content h2 {
-  margin: 0 0 .5rem;
+  text-align: center;
+  font-size: 2rem;   /* ↑ increase or decrease as you like */
+  margin-bottom: 0.75rem;
 }
+
+/* Contact card — Bio text */
 #panel-content p {
-  margin: .5rem 0;
+  font-size: 1.25rem;  /* ↑ adjust to taste (e.g. 1rem, 1.25rem) */
+  line-height: 1.4;
 }
 #panel-content a {
   color: inherit;
@@ -120,4 +150,54 @@ h1 {
 }
 #panel-content a:hover {
   text-decoration: underline;
+}
+/* === CONTACT LINKS === */
+#panel-content .contact-links {
+  display: flex;
+  justify-content: center;  /* center them horizontally */
+  gap: 1rem;                /* space between buttons */
+  margin-top: 1.5rem;
+}
+
+#panel-content .contact-link {
+  display: inline-block;
+  font-size: 1.25rem;       /* make the text bigger */
+  padding: 0.5rem 1rem;
+  background: #f1f1f1;
+  border-radius: 4px;
+  color: #333;
+  text-decoration: none;
+  transition: background .2s;
+}
+
+#panel-content .contact-link:hover {
+  background: #e0e0e0;
+}
+@media (max-width: 768px) {
+  /* shrink map on phones */
+  .map-container {
+    height: 40vh;
+  }
+
+  /* make buttons flow under the map, full-width row */
+  .buttons {
+    position: relative;        /* drop out of absolute layout */
+    top: auto;
+    right: auto;
+    transform: none;
+    flex-direction: row;       /* side-by-side, or switch to column if you prefer */
+    justify-content: space-around;
+    width: 100%;
+    padding: 0.5rem 0;
+    background: rgba(255,255,255,0.8);  /* add a slight white backdrop */
+    box-shadow: 0 -2px 6px rgba(0,0,0,0.1);
+    z-index: 10;
+  }
+
+  .buttons button {
+    flex: 1;                   /* make them equal width */
+    margin: 0 0.25rem;         /* small gutter */
+    font-size: 1rem;           /* scale down if needed */
+    padding: 0.75rem 0;
+  }
 }

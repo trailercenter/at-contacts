@@ -1,11 +1,11 @@
 // Sales‐rep data
 const reps = {
   FL: {
-    name: 'Alice Brooks',
-    photo: 'assets/alice.jpg',
-    bio: 'Alice works closely with boat dealers across Florida, bringing 10 years of marine sales expertise.',
-    phone: '555-123-4567',
-    email: 'alice@example.com'
+    name: 'Chris Beeman',
+    photo: 'assets/chris.jpg',
+    bio: 'A Florida native and avid fisherman, Chris is the go-to for all Florida-based dealers. If your customer demands an Ameratrail Trailer, Chris is the one to call.',
+    phone: '407-593-9222',
+    email: 'cbeeman@ameratrail.com'
   },
   EC: {
     name: 'Bob Chen',
@@ -37,10 +37,10 @@ function openPanel(key) {
     <img src="${rep.photo}" alt="${rep.name}" class="headshot"/>
     <h2>${rep.name}</h2>
     <p>${rep.bio}</p>
-    <p>
-      <a href="tel:${rep.phone}">📞 ${rep.phone}</a><br/>
-      <a href="mailto:${rep.email}">✉️ ${rep.email}</a>
-    </p>
+    <div class="contact-links">
+      <a class="contact-link" href="tel:${rep.phone}">📞 ${rep.phone}</a>
+      <a class="contact-link" href="mailto:${rep.email}">✉️ ${rep.email}</a>
+    </div>
   `;
   overlayEl.style.display = 'block';
   panelEl.classList.add('open');

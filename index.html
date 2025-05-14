@@ -8,17 +8,25 @@
 </head>
 <body>
 
-  <h1>Our Dealers</h1>
 
   <!-- Full‐width map background -->
   <div class="map-container"></div>
 
   <!-- Main buttons -->
-  <div class="buttons">
-    <button data-group="FL">Florida Dealers</button>
-    <button data-group="EC">East Coast Dealers</button>
-    <button data-group="RS">Retail Sales</button>
-  </div>
+<div class="buttons">
+  <!-- Dealers group -->
+  <div class="section-label">For Dealers:</div>
+  <button data-group="FL">Florida Dealers</button>
+  <button data-group="EC">South/East Coast Dealers</button>
+
+  <!-- spacer between groups -->
+  <div class="section-spacer"></div>
+
+  <!-- Retail group -->
+  <div class="section-label">For Retail Customers:</div>
+  <button data-group="RS">Retail Sales</button>
+</div>
+
 
   <!-- Semi‐transparent overlay -->
   <div id="overlay" class="overlay"></div>
