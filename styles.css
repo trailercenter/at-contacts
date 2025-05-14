@@ -16,7 +16,7 @@ h1 {
   top: 3rem;
   left: 0;
   right: 0;
-  height: 60vh;               /* limit by height, not width */
+  height: 60vh;               /* limit by height, not width 1 */
   background: url('assets/map.png') no-repeat center;
   background-size: auto 100%; /* scale so height is always 100% */
   z-index: 1;
