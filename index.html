@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Map</title>
+  <!-- MicroModal styles -->
+  <link rel="stylesheet" href="https://unpkg.com/micromodal/dist/micromodal.css"/>
+  <!-- Your custom styles -->
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+  <h1>Our Dealers</h1>
+
+  <div class="map-and-buttons">
+    <!-- Inline SVG map: each state has its own <path> with id="state-XX" -->
+    <div id="map-container">
+      <!-- PASTE YOUR SVG HERE. Each coast state needs class="zone-ec" except Florida as id="state-FL" with class="zone-fl". -->
+      <!-- Example fragment:
+      <svg viewBox="…">
+        <path id="state-FL" class="zone-fl" d="M…Z"/>
+        <path id="state-GA" class="zone-ec" d="M…Z"/>
+        <!-- etc -->
+      </svg>
+      -->
+    </div>
+
+    <div class="buttons">
+      <button data-micromodal-trigger="modal-1" data-group="FL">Florida Dealers</button>
+      <button data-micromodal-trigger="modal-1" data-group="EC">East Coast Dealers</button>
+      <button data-micromodal-trigger="modal-1" data-group="RS">Retail Sales</button>
+    </div>
+  </div>
+
+  <!-- MicroModal markup -->
+  <div class="modal micromodal-slide" id="modal-1" aria-hidden="true">
+    <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+      <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
+        <header class="modal__header">
+          <h2 class="modal__title" id="modal-1-title"></h2>
+          <button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
+        </header>
+        <main class="modal__content" id="modal-1-content"></main>
+      </div>
+    </div>
+  </div>
+
+  <!-- MicroModal script -->
+  <script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
+  <!-- Your app logic -->
+  <script src="app.js"></script>
+</body>
+</html>
