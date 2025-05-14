@@ -1,58 +1,109 @@
-/* overall layout */
+/* PAGE LAYOUT */
 body {
+  margin: 0;
   font-family: sans-serif;
-  margin: 1rem;
+  height: 100vh;
+  overflow: hidden;
 }
 h1 {
   text-align: center;
+  margin: 1rem 0 0;
 }
 
-/* map container uses your PNG as a background */
+/* FULL-WIDTH MAP */
 .map-container {
-  position: relative;
-  width: 100%;
-  max-width: 800px;
-  height: 400px;              /* adjust to your image aspect */
-  margin: 0 auto 2rem;
+  position: absolute;
+  top: 3rem;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background: url('assets/map.png') no-repeat center;
   background-size: cover;
 }
 
-/* overlay the buttons on top of the map (or adjust to your liking) */
-.map-container .buttons {
+/* BUTTONS ON RIGHT SIDE */
+.buttons {
   position: absolute;
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  right: 2%;
+  transform: translateY(-50%);
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 1rem;
+  z-index: 10;
 }
-
-/* button styling */
 .buttons button {
-  padding: 0.6rem 1.2rem;
-  font-size: 1rem;
-  cursor: pointer;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  background-color: #007bff;
+  color: #fff;
   border: none;
-  border-radius: 4px;
-  background-color: #ffffffcc;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  cursor: pointer;
   transition: background-color .2s;
 }
 .buttons button:hover {
-  background-color: #fff;
+  background-color: #0056b3;
 }
 
-/* headshot styling */
-.headshot {
+/* OVERLAY BEHIND PANEL */
+.overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.3);
+  display: none;
+  z-index: 1000;
+}
+
+/* SLIDING CONTACT PANEL */
+.contact-panel {
+  position: fixed;
+  top: 0; right: 0;
+  width: 320px; height: 100%;
+  background: #fff;
+  box-shadow: -2px 0 8px rgba(0,0,0,0.2);
+  transform: translateX(100%);
+  transition: transform .3s ease-out;
+  z-index: 1001;
+  padding: 1.5rem;
+  overflow-y: auto;
+}
+.contact-panel.open {
+  transform: translateX(0);
+}
+
+/* CLOSE BUTTON */
+.close-panel {
+  position: absolute;
+  top: 1rem; right: 1rem;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* CONTACT CARD CONTENT */
+#panel-content {
+  margin-top: 2rem;
+}
+#panel-content .headshot {
   width: 100px;
   height: 100px;
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 1rem;
 }
-
-/* modal content tweaks */
-.modal__content p {
-  margin: 0.5rem 0;
+#panel-content h2 {
+  margin: 0 0 .5rem;
+}
+#panel-content p {
+  margin: .5rem 0;
+}
+#panel-content a {
+  color: #007bff;
+  text-decoration: none;
+}
+#panel-content a:hover {
+  text-decoration: underline;
 }
