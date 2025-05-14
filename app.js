@@ -3,32 +3,32 @@ const reps = {
   FL: {
     name: 'Alice Brooks',
     photo: 'assets/alice.jpg',
-    bio: '10 years in FL marine sales with deep local expertise.',
+    bio: 'Alice works closely with boat dealers across Florida, bringing 10 years of marine sales expertise.',
     phone: '555-123-4567',
     email: 'alice@example.com'
   },
   EC: {
     name: 'Bob Chen',
     photo: 'assets/bob.jpg',
-    bio: 'Territory manager for NC, GA, SC, and all East Coast.',
+    bio: 'Bob supports dealers up and down the East Coast (NC, GA, SC, etc.) with top-tier service.',
     phone: '555-987-6543',
     email: 'bob@example.com'
   },
   RS: {
     name: 'Retail Team',
     photo: 'assets/retail.jpg',
-    bio: 'Our retail team handles all store and walk-in inquiries.',
+    bio: 'Our Retail Team handles all walk-in and in-store inquiries—happy to help any customer.',
     phone: '555-111-2222',
     email: 'retail@example.com'
   }
 };
 
 // Elements
-const buttonsEl = document.querySelector('.buttons');
-const overlayEl = document.getElementById('overlay');
-const panelEl = document.getElementById('contact-panel');
+const buttonsEl      = document.querySelector('.buttons');
+const overlayEl      = document.getElementById('overlay');
+const panelEl        = document.getElementById('contact-panel');
 const panelContentEl = document.getElementById('panel-content');
-const closeBtn = document.getElementById('close-panel');
+const closeBtn       = document.getElementById('close-panel');
 
 // Show contact panel
 function openPanel(key) {
@@ -54,13 +54,11 @@ function closePanel() {
   buttonsEl.style.display = 'flex';
 }
 
-// Wire up main buttons
+// Hook up main buttons
 document.querySelectorAll('.buttons button').forEach(btn => {
-  btn.addEventListener('click', () => {
-    openPanel(btn.dataset.group);
-  });
+  btn.addEventListener('click', () => openPanel(btn.dataset.group));
 });
 
-// Clicking overlay or “×” closes everything
+// Close on overlay click or “×”
 overlayEl.addEventListener('click', closePanel);
 closeBtn.addEventListener('click', closePanel);
