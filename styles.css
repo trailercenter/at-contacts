@@ -1,0 +1,58 @@
+/* overall layout */
+body {
+  font-family: sans-serif;
+  margin: 1rem;
+}
+h1 {
+  text-align: center;
+}
+
+/* map container uses your PNG as a background */
+.map-container {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  height: 400px;              /* adjust to your image aspect */
+  margin: 0 auto 2rem;
+  background: url('assets/map.png') no-repeat center;
+  background-size: cover;
+}
+
+/* overlay the buttons on top of the map (or adjust to your liking) */
+.map-container .buttons {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* button styling */
+.buttons button {
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  background-color: #ffffffcc;
+  transition: background-color .2s;
+}
+.buttons button:hover {
+  background-color: #fff;
+}
+
+/* headshot styling */
+.headshot {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+/* modal content tweaks */
+.modal__content p {
+  margin: 0.5rem 0;
+}
