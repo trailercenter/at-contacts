@@ -173,31 +173,42 @@ h1 {
 #panel-content .contact-link:hover {
   background: #e0e0e0;
 }
+/* MOBILE LAYOUT FIXES */
 @media (max-width: 768px) {
-  /* shrink map on phones */
+  /* 1) Map becomes part of the flow with a visible height */
   .map-container {
-    height: 40vh;
+    position: relative;      /* no longer absolute */
+    top: unset;              /* clear the desktop top offset */
+    width: 100%;
+    height: 30vh;            /* fixed mobile height so it’s not tiny */
+    background-size: contain;/* show the whole map */
+    background-position: center center;
+    overflow: hidden;
+    z-index: 1;
   }
 
-  /* make buttons flow under the map, full-width row */
+  /* 2) Buttons flow under the map in a column */
   .buttons {
-    position: relative;        /* drop out of absolute layout */
+    position: relative;      /* drop out of absolute layout */
+    margin: 1rem auto 0;     /* some breathing room */
     top: auto;
     right: auto;
     transform: none;
-    flex-direction: row;       /* side-by-side, or switch to column if you prefer */
-    justify-content: space-around;
-    width: 100%;
-    padding: 0.5rem 0;
-    background: rgba(255,255,255,0.8);  /* add a slight white backdrop */
-    box-shadow: 0 -2px 6px rgba(0,0,0,0.1);
+    flex-direction: column;  /* stack vertically */
+    justify-content: center;
+    align-items: stretch;    /* full-width buttons */
+    width: 90%;
+    padding: 1rem;
+    background: rgba(255,255,255,0.9);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     z-index: 10;
   }
 
+  /* 3) Make each button full-width */
   .buttons button {
-    flex: 1;                   /* make them equal width */
-    margin: 0 0.25rem;         /* small gutter */
-    font-size: 1rem;           /* scale down if needed */
+    width: 100%;
+    margin: 0.5rem 0;
+    font-size: 1rem;         /* you can tweak this smaller if needed */
     padding: 0.75rem 0;
   }
 }
