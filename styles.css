@@ -13,6 +13,10 @@ h2 {
   text-align: center;
   margin: 1rem 0 0;
 }
+h3 {
+  text-align: center;
+  margin: 1rem 0 0;
+}
 
 /* HEIGHT-LIMITED, FULL-WIDTH MAP */
 .map-container {
