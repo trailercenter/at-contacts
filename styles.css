@@ -231,6 +231,9 @@ h1 {
 
   /* HIDE DEALERS LABEL/SPACER */
   .buttons .section-title,
+  .buttons .section-label {
+    display: none !important;
+  }
   .buttons .section-spacer {
     display: none !important;
   }
