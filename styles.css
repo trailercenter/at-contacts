@@ -83,6 +83,9 @@ h1 {
 .buttons button[data-group="EC"] {
   background-color: #1ed006; /* green */
 }
+.buttons button[data-group="AM"] {
+  background-color: #3498db; /* blue as default */
+}
 .buttons button[data-group="RS"] {
   background-color: #3498db; /* blue as default */
 }
