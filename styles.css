@@ -14,7 +14,7 @@ h1 {
 .map-container {
   position: absolute;
   top: 1rem;
-  left: 0rem;
+  left: -10rem;
   right: 0;
 
   /* 1. Full‐width, height determined by aspect‐ratio */
@@ -187,14 +187,14 @@ h1 {
   @media (max-width: 768px) {
     .map-container {
       position: relative !important;
-      top: 1rem !important;
+      top: 0rem !important;
       left: auto !important;
       margin: 0 auto !important;
 
       width: 100% !important;
       height: 50vh !important;
 
-      background-image: url('assets/map.png');
+      background-image: url('assets/map-mobile.png');
       background-repeat: no-repeat;
       background-position: center center;  /* center both axes */
       background-size: contain;            /* always show full map */
@@ -211,7 +211,7 @@ h1 {
     right: auto !important;
     bottom: auto !important;
     transform: none !important;
-    margin: 1rem auto 0 !important;
+    margin: -2rem auto 0 !important;
     display: flex !important;
     flex-direction: column;
     align-items: center;
