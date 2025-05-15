@@ -8,9 +8,9 @@ const reps = {
     email: 'cbeeman@ameratrail.com'
   },
   EC: {
-    name: 'Bob Chen',
-    photo: 'assets/bob.jpg',
-    bio: 'Bob supports dealers up and down the East Coast (NC, GA, SC, etc.) with top-tier service.',
+    name: 'Billy McNair',
+    photo: 'assets/billy.jpg',
+    bio: 'Billy supports dealers up and down the East Coast (NC, GA, SC, etc.) with top-tier service.',
     phone: '555-987-6543',
     email: 'bob@example.com'
   },
