@@ -120,8 +120,11 @@ h1 {
 /* put this alongside your other contact-panel styles */
 
 #panel-content .website-link {
-  margin-top: 1rem;
   text-align: center;
+  display: flex;
+  justify-content: center;  /* center them horizontally */
+  gap: 1rem;                /* space between buttons */
+  padding: 0.5rem 0rem;
 }
 
 .contact-panel.open {
@@ -178,6 +181,7 @@ h1 {
   gap: 1rem;                /* space between buttons */
   margin-top: 1.5rem;
 }
+
 
 #panel-content .contact-link {
   display: inline-block;
@@ -256,6 +260,12 @@ h1 {
     font-size: 1rem;
     padding: 0.5rem 1rem;
   }
+  #panel-content .website-link {
+    flex-direction: column;
+    text-align: left;
+    font-size: 1rem;
+    padding: 0.5rem 0rem;
+}
   .contact-panel {
     width: 90%;
     max-width: 350px;
