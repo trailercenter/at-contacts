@@ -11,15 +11,15 @@ const reps = {
     name: 'Billy McNair',
     photo: 'assets/billy.jpg',
     bio: 'Billy supports dealers up and down the East Coast (NC, GA, SC, etc.) with top-tier service.',
-    phone: '555-987-6543',
+    phone: '407-593-9222',
     email: 'bob@example.com'
   },
   RS: {
     name: 'Kim Williams',
     photo: 'assets/kim.jpg',
-    bio: 'She\'s \'fishing girl\' to many, but to us, she\'s the best retail rep in the business. Kim is a pro with all our retail customers, and she\'s always ready to help.',
-    phone: '555-111-2222',
-    email: 'retail@example.com'
+    bio: 'She\'s \'fishin\' girl\' to many, but to us, she\'s the best retail rep in the business. Kim is a pro with all our retail customers, and she\'s always ready to help.',
+    phone: '407-593-9222',
+    email: 'fishingirl@ameratrail.com'
   },
   HQ: {
     // name isn’t used in the template, so you can keep it or omit it
