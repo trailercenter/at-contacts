@@ -20,6 +20,13 @@ const reps = {
     bio: 'She\'s \'fishing girl\' to many, but to us, she\'s the best retail rep in the business. Kim is a pro with all our retail customers, and she\'s always ready to help.',
     phone: '555-111-2222',
     email: 'retail@example.com'
+  },
+    HQ: {
+    name: 'AmeraTrail HQ',
+    photo: 'assets/hq.jpg',
+    bio: 'Questions about parts, service, or warranty? Our HQ team is here to help. We\'re available Monday through Friday from 8:00 AM to 5:00 PM EST.',
+    phone: '407-593-9222',
+    email: 'info@ameratrail.com'
   }
 };
 

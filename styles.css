@@ -33,7 +33,7 @@ h1 {
 .buttons {
   position: absolute;
   top: 50%;
-  right: 15%;
+  right: 10%;
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
@@ -43,7 +43,7 @@ h1 {
 .buttons button {
   padding: 1rem 2rem;
   font-size: 2rem;
-  color: #fff;
+  color: #ffffff;
   border: none;
   border-radius: 6px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.2);
@@ -83,6 +83,9 @@ h1 {
   background-color: #1ed006; /* green */
 }
 .buttons button[data-group="RS"] {
+  background-color: #3498db; /* blue as default */
+}
+.buttons button[data-group="HQ"] {
   background-color: #3498db; /* blue as default */
 }
 
@@ -186,14 +189,21 @@ h1 {
   .map-container {
     position: relative !important;
     top: 1rem !important;
-    left: 0 !important;
+    /* remove any horizontal offset */
+    left: 5rem !important;
+    margin: 0 auto !important;
+
     width: 100% !important;
-    height: 50vh !important;
-    background: url('assets/map.png') no-repeat left center;
+    height: 40vh !important;
+
+    /* center the map image in the container */
+    background: url('assets/map.png') no-repeat center center !important;
     background-size: auto 100% !important;
+
     overflow: hidden !important;
     z-index: 1;
   }
+
 
   /* BUTTONS */
   .buttons {
