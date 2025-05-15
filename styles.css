@@ -184,25 +184,24 @@ h1 {
 #panel-content .contact-link:hover {
   background: #e0e0e0;
 }
-@media (max-width: 768px) {
-  /* MAP */
-  .map-container {
-    position: relative !important;
-    top: 1rem !important;
-    /* remove any horizontal offset */
-    left: 5rem !important;
-    margin: 0 auto !important;
+  @media (max-width: 768px) {
+    .map-container {
+      position: relative !important;
+      top: 1rem !important;
+      left: auto !important;
+      margin: 0 auto !important;
 
-    width: 100% !important;
-    height: 40vh !important;
+      width: 100% !important;
+      height: 50vh !important;
 
-    /* center the map image in the container */
-    background: url('assets/map.png') no-repeat center center !important;
-    background-size: auto 100% !important;
+      background-image: url('assets/map.png');
+      background-repeat: no-repeat;
+      background-position: center center;  /* center both axes */
+      background-size: contain;            /* always show full map */
 
-    overflow: hidden !important;
-    z-index: 1;
-  }
+      overflow: hidden !important;
+      z-index: 1;
+    }
 
 
   /* BUTTONS */
