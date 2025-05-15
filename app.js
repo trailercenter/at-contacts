@@ -14,6 +14,13 @@ const reps = {
     phone: '407-593-9222',
     email: 'bob@example.com'
   },
+  AM: {
+    name: 'Margaret Boswell',
+    photo: 'assets/margaret.jpg',
+    bio: 'Questions about your dealer accounts, billing, payments, etc? Give Margaret a call today for all your dealer account management needs!',
+    phone: '407-593-9222',
+    email: 'bob@example.com'
+  },
   RS: {
     name: 'Kim Williams',
     photo: 'assets/kim.jpg',
