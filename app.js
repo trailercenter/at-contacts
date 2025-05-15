@@ -55,7 +55,6 @@ const closeBtn       = document.getElementById('close-panel');
 function openPanel(key) {
   const rep = reps[key];
   let html = `
-    <p>${rep.title}</p>
     <img src="${rep.photo}" alt="Contact" class="headshot"/>
     <p>${rep.bio}</p>
   `;
@@ -79,7 +78,8 @@ function openPanel(key) {
     `;
   } else {
     // Prepend the name header for non-HQ reps
-    html = `<h2>${rep.name}</h2>` + html;
+    html = `<h3>${rep.title}</h3>
+    <h2>${rep.name}</h2>` + html;
   }
 
   panelContentEl.innerHTML = html;
