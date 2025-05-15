@@ -1,6 +1,7 @@
 // Sales‐rep data
 const reps = {
   FL: {
+    title: 'Florida Dealer Sales',
     name: 'Chris Beeman',
     photo: 'assets/chris.jpg',
     bio: 'A Florida native and avid fisherman, Chris is the go-to for all Florida-based dealers. If your customer demands an Ameratrail Trailer, Chris is the one to call.',
@@ -8,6 +9,7 @@ const reps = {
     email: 'cbeeman@ameratrail.com'
   },
   EC: {
+    title: 'East Coast Dealer Sales',
     name: 'Billy McNair',
     photo: 'assets/billy.jpg',
     bio: 'Billy supports dealers up and down the East Coast (NC, GA, SC, etc.) with top-tier service.',
@@ -15,6 +17,7 @@ const reps = {
     email: 'bob@example.com'
   },
   AM: {
+    title: 'Dealer Account Manager',
     name: 'Margaret Boswell',
     photo: 'assets/margaret.jpg',
     bio: 'Questions about your dealer accounts, billing, payments, etc? Give Margaret a call today for all your dealer account management needs!',
@@ -22,6 +25,7 @@ const reps = {
     email: 'bob@example.com'
   },
   RS: {
+    title: 'Retail Sales',
     name: 'Kim Williams',
     photo: 'assets/kim.jpg',
     bio: 'She\'s \'fishin\' girl\' to many, but to us, she\'s the best retail rep in the business. Kim is a pro with all our retail customers, and she\'s always ready to help.',
@@ -30,6 +34,7 @@ const reps = {
   },
   HQ: {
     // name isn’t used in the template, so you can keep it or omit it
+    title: 'Ameratrail HQ',
     photo: 'assets/hq.jpg',
     bio: 'Questions about parts, service, or warranty? Our HQ team is here to help. We\'re available Monday through Friday from 8:00 AM to 5:00 PM EST.',
     phone: '407-593-9222',
@@ -50,6 +55,7 @@ const closeBtn       = document.getElementById('close-panel');
 function openPanel(key) {
   const rep = reps[key];
   let html = `
+    <p>${rep.title}</p>
     <img src="${rep.photo}" alt="Contact" class="headshot"/>
     <p>${rep.bio}</p>
   `;
