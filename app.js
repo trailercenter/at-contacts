@@ -15,9 +15,9 @@ const reps = {
     email: 'bob@example.com'
   },
   RS: {
-    name: 'Retail Team',
-    photo: 'assets/retail.jpg',
-    bio: 'Our Retail Team handles all walk-in and in-store inquiries—happy to help any customer.',
+    name: 'Kim Williams',
+    photo: 'assets/kim.jpg',
+    bio: 'She\'s \'fishing girl\' to many, but to us, she\'s the best retail rep in the business. Kim is a pro with all our retail customers, and she\'s always ready to help.',
     phone: '555-111-2222',
     email: 'retail@example.com'
   }
