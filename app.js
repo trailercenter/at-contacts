@@ -44,6 +44,7 @@ function openPanel(key) {
     <img src="${rep.photo}" alt="${rep.name}" class="headshot"/>
     <h2>${rep.name}</h2>
     <p>${rep.bio}</p>
+    <p>Give ${rep.name} a call today!</p>
     <div class="contact-links">
       <a class="contact-link" href="tel:${rep.phone}">📞 ${rep.phone}</a>
       <a class="contact-link" href="mailto:${rep.email}">✉️ ${rep.email}</a>
