@@ -21,12 +21,13 @@ const reps = {
     phone: '555-111-2222',
     email: 'retail@example.com'
   },
-    HQ: {
-    name: 'AmeraTrail HQ',
+  HQ: {
+    // name isn’t used in the template, so you can keep it or omit it
     photo: 'assets/hq.jpg',
     bio: 'Questions about parts, service, or warranty? Our HQ team is here to help. We\'re available Monday through Friday from 8:00 AM to 5:00 PM EST.',
     phone: '407-593-9222',
-    email: 'info@ameratrail.com'
+    email: 'info@ameratrail.com',
+    website: 'https://ameratrail.com'
   }
 };
 
@@ -38,22 +39,42 @@ const panelContentEl = document.getElementById('panel-content');
 const closeBtn       = document.getElementById('close-panel');
 
 // Show contact panel
+// 2) Update your openPanel function
 function openPanel(key) {
   const rep = reps[key];
-  panelContentEl.innerHTML = `
-    <img src="${rep.photo}" alt="${rep.name}" class="headshot"/>
-    <h2>${rep.name}</h2>
+  let html = `
+    <img src="${rep.photo}" alt="Contact" class="headshot"/>
     <p>${rep.bio}</p>
-    <p>Give ${rep.name} a call today!</p>
+  `;
+
+  // 1) Phone & Email row
+  html += `
     <div class="contact-links">
       <a class="contact-link" href="tel:${rep.phone}">📞 ${rep.phone}</a>
       <a class="contact-link" href="mailto:${rep.email}">✉️ ${rep.email}</a>
     </div>
   `;
+
+  // 2) Website row only for HQ
+  if (key === 'HQ') {
+    html += `
+      <div class="website-link">
+        <a class="contact-link" href="${rep.website}" target="_blank" rel="noopener">
+          🌐 Visit Our Website
+        </a>
+      </div>
+    `;
+  } else {
+    // Prepend the name header for non-HQ reps
+    html = `<h2>${rep.name}</h2>` + html;
+  }
+
+  panelContentEl.innerHTML = html;
   overlayEl.style.display = 'block';
   panelEl.classList.add('open');
   buttonsEl.style.display = 'none';
 }
+
 
 // Close contact panel
 function closePanel() {

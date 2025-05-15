@@ -116,6 +116,14 @@ h1 {
   padding: 2rem 1.5rem;
   overflow-y: auto;
 }
+
+/* put this alongside your other contact-panel styles */
+
+#panel-content .website-link {
+  margin-top: 1rem;
+  text-align: center;
+}
+
 .contact-panel.open {
   left: 50%;                 /* end up centered */
   transform: translate(-50%, -50%);
