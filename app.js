@@ -14,7 +14,7 @@ const reps = {
     photo: 'assets/billy.jpg',
     bio: 'Billy supports dealers up and down the East Coast (NC, GA, SC, etc.) with top-tier service.',
     phone: '407-593-9222',
-    email: 'bob@example.com'
+    email: 'wtmcnair@ameratrail.com'
   },
   AM: {
     title: 'Dealer Account Manager',
@@ -22,7 +22,7 @@ const reps = {
     photo: 'assets/margaret.jpg',
     bio: 'Questions about your dealer accounts, billing, payments, etc? Give Margaret a call today for all your dealer account management needs!',
     phone: '407-593-9222',
-    email: 'bob@example.com'
+    email: 'mboswell@ameratrail.com'
   },
   RS: {
     title: 'Retail Sales',
@@ -40,6 +40,15 @@ const reps = {
     phone: '407-593-9222',
     email: 'info@ameratrail.com',
     website: 'https://ameratrail.com'
+  },
+  PT: {
+    // name isn’t used in the template, so you can keep it or omit it
+    title: 'Parts and Shipping',
+    photo: 'assets/parts.jpg',
+    bio: 'Did you know we sell parts for trailers? Check out our online parts store to buy replacement parts for your trailer!',
+    phone: '407-593-9222',
+    email: 'parts@ameratrail.com',
+    website: 'https://ameratrailparts.com'
   }
 };
 
@@ -68,7 +77,7 @@ function openPanel(key) {
   `;
 
   // 2) Website row only for HQ
-  if (key === 'HQ') {
+  if (key === 'HQ' || key === 'PT') {
     html += `
       <div class="website-link">
         <a class="contact-link" href="${rep.website}" target="_blank" rel="noopener">
