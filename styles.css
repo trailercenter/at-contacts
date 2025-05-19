@@ -100,6 +100,9 @@ h3 {
 .buttons button[data-group="HQ"] {
   background-color: #3498db; /* blue as default */
 }
+.buttons button[data-group="PT"] {
+  background-color: #3498db; /* blue as default */
+}
 
 /* OVERLAY WITH BLUR */
 .overlay {
